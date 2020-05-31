@@ -1,0 +1,27 @@
+{
+  "name": "auth-token",
+  "version": "1.0.0",
+  "description": "Token",
+  "main": "index.js",
+  "scripts": {
+    "server": "nodemon",
+    "start": "index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NathanNNguyen/node-auth-token.git"
+  },
+  "author": "Nathan Nguyen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NathanNNguyen/node-auth-token/issues"
+  },
+  "homepage": "https://github.com/NathanNNguyen/node-auth-token#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "express": "^4.17.1",
+    "knex": "^0.20.10",
+    "nodemon": "^2.0.2",
+    "sqlite3": "^4.1.1"
+  }
+}
