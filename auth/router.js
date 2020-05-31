@@ -38,7 +38,7 @@ router.post('/login', async (req, res) => {
         message: `Welcome back, ${user.username}!`
       })
     } else {
-      res.status(401).json({ message: `Incorrect username or password` })
+      res.status(401).json({ message: `Invalid credentials` })
     }
   }
   catch (err) {
@@ -56,7 +56,7 @@ function generateToken(user) {
   }
 
   const options = {
-    expiresIn: '1h'
+    expiresIn: '1d'
   }
 
   return jwt.sign(payload, process.env.JWT_TOKEN, options)
