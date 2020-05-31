@@ -2,6 +2,8 @@
 
 Simple API with a single user table that allows users to register and login
 
+[Live](https://authorization-token.herokuapp.com/)
+
 ## Topics
 
 - Authentication.
