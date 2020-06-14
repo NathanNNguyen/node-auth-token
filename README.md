@@ -2,7 +2,7 @@
 
 Simple API with a single user table that allows users to register and login
 
-[https://authorization-token.herokuapp.com/](https://authorization-token.herokuapp.com/)
+API: https://authorization-token.herokuapp.com/
 
 ## Topics
 
