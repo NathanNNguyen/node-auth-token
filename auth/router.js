@@ -5,7 +5,7 @@ const jwt = require('jsonwebtoken');
 
 const router = express();
 
-router.post('/register', async (req, res) => {
+router.post('/register', validateUser, async (req, res) => {
   console.log('register')
 
   const user = req.body;
@@ -64,6 +64,14 @@ function generateToken(user) {
   }
 
   return jwt.sign(payload, process.env.JWT_TOKEN, options)
+}
+
+function validateUser(req, res, next) {
+  if (!req.body.username || !req.body.password) {
+    res.json({ message: 'Invalid credentials' })
+  } else {
+    next()
+  }
 }
 
 module.exports = router;

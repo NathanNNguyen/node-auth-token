@@ -12,8 +12,11 @@ function findUsers() {
 
 function add(userData) {
   return db('users')
-    .returning(['id', 'username'])
+    // .returning(['id', 'username'])
     .insert(userData)
+  // .then(arr => {
+  //   return findById(arr[0].username)
+  // })
 };
 
 function findBy(query) {
