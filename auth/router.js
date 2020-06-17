@@ -17,7 +17,7 @@ router.post('/register', validateUser, async (req, res) => {
     // a jwt should be generated
     const token = generateToken(registered)
     res.status(201).json({
-      user: registered,
+      // user: registered,
       token
     })
   }
