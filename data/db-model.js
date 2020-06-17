@@ -12,11 +12,11 @@ function findUsers() {
 
 function add(userData) {
   return db('users')
-    // .returning(['id', 'username'])
+    // .returning(['id', 'username'])         FOR USING AWS RDS
     .insert(userData)
   // .then(arr => {
   //   return findById(arr[0].username)
-  // })
+  // })                                       FOR USING SQLITE3
 };
 
 function findBy(query) {

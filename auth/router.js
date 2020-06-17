@@ -6,18 +6,14 @@ const jwt = require('jsonwebtoken');
 const router = express();
 
 router.post('/register', validateUser, async (req, res) => {
-  console.log('register')
-
   const user = req.body;
-  console.log(req.body)
   user.password = bcrypt.hashSync(user.password, 10);
   try {
     const registered = await db.add(user)
-    console.log('registered1111')
     // a jwt should be generated
     const token = generateToken(registered)
     res.status(201).json({
-      // user: registered,
+      user: registered,
       token
     })
   }
@@ -53,7 +49,6 @@ function generateToken(user) {
   // header payload and verify signature
   // payload => username, id, roles, exp date
   // v signature => a secret
-  console.log(user)
   const payload = {
     sub: user.id,
     username: user.username
