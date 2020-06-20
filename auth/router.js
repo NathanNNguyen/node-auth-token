@@ -13,12 +13,12 @@ router.post('/register', validateUser, async (req, res) => {
     // a jwt should be generated
     const token = generateToken(registered)
     res.status(201).json({
-      user: registered,
+      message: 'Registered success',
       token
     })
   }
-  catch (err) {
-    res.status(500).json({ message: err.detail, err })
+  catch ({ name, code, detail, constraint }) {
+    res.status(500).json({ name, code, detail, constraint })
   }
 });
 
@@ -41,7 +41,7 @@ router.post('/login', async (req, res) => {
     }
   }
   catch (err) {
-    res.status(500).json({ message: 'Invalid username or password', err })
+    res.status(500).json({ message: 'Internal error', err })
   }
 });
 
